@@ -34,9 +34,11 @@ settings:
     view_backlog: 6
     browse_boards: 1
     run_report: 1
-    report_status: 2
+    report_status: 3
     get_config: 2
+    post_config: 1
     config_changed: 2
+    get_pdf: 1
     standalone_extension: 0 # By default disabled
     # Custom dataset section.
     custom_dataset_query:          # Write JQL query to add JQL output to the app/datasets/jira/custom-issues.csv, e.g. "summary ~ 'AppIssue*'"

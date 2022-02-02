@@ -24,11 +24,25 @@ def get_config(locust):
     statusCode = r.status_code 
     assert statusCode == 200
 
+@jira_measure("locust_app_specific_post_config")
+@run_as_specific_user(username='admin', password='admin') 
+def post_config(locust):
+    body = {"user": "admin", "restCalls": "true"} 
+    headers = {'content-type': 'application/x-www-form-urlencoded'}
+    r = locust.post(f"{JIRA_SETTINGS.server_url}/rest/healthcheckjirareporter/latest/config/post", body, headers, catch_response=True) 
+
 
 @jira_measure("locust_app_specific_check_config_change")
 @run_as_specific_user(username='admin', password='admin') 
 def check_config_change(locust):
     r = locust.get(f"{JIRA_SETTINGS.server_url}/rest/healthcheckjirareporter/latest/config/isChanged", catch_response=True) 
+    statusCode = r.status_code 
+    assert statusCode == 200
+
+@jira_measure("locust_app_specific_get_pdf")
+@run_as_specific_user(username='admin', password='admin') 
+def get_pdf(locust):
+    r = locust.get(f"{JIRA_SETTINGS.server_url}/rest/healthcheckjirareporter/latest/pdf", catch_response=True) 
     statusCode = r.status_code 
     assert statusCode == 200
 
