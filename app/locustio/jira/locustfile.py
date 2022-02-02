@@ -63,9 +63,25 @@ class JiraBehavior(MyBaseTaskSet):
     def browse_boards_action(self):
         browse_boards(self)
 
-    @task(config.percentage('standalone_extension'))  # By default disabled
-    def custom_action(self):
-        app_specific_action(self)
+    @task(config.percentage('run_report'))
+    def run_report_action(self):
+        run_report(self)
+
+    @task(config.percentage('report_status'))
+    def check_report_status_action(self):
+        check_report_status(self)
+
+    @task(config.percentage('get_config'))
+    def get_config_action(self):
+        get_config(self)
+
+    @task(config.percentage('config_changed'))
+    def check_config_change_action(self):
+        check_config_change(self)
+
+    @task(config.percentage('post_config'))
+    def post_config_action(self):
+        post_config(self)
 
 
 class JiraUser(HttpUser):
