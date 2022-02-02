@@ -79,9 +79,6 @@ class JiraBehavior(MyBaseTaskSet):
     def check_config_change_action(self):
         check_config_change(self)
 
-    @task(config.percentage('post_config'))
-    def post_config_action(self):
-        post_config(self)
 
 
 class JiraUser(HttpUser):
