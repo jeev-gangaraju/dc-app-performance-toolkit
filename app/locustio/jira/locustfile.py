@@ -3,7 +3,7 @@ from locustio.jira.http_actions import login_and_view_dashboard, create_issue, s
     view_project_summary, view_dashboard, edit_issue, add_comment, browse_boards, view_kanban_board, view_scrum_board, \
     view_backlog, browse_projects
 from locustio.common_utils import LocustConfig, MyBaseTaskSet
-from extension.jira.extension_locust import check_report_status, get_config, check_config_change, post_config
+from extension.jira.extension_locust 
 from util.conf import JIRA_SETTINGS
 
 config = LocustConfig(config_yml=JIRA_SETTINGS)
@@ -67,7 +67,7 @@ class JiraBehavior(MyBaseTaskSet):
     def run_report_action(self):
         run_report(self)"""
 
-    @task(config.percentage('report_status'))
+    """@task(config.percentage('report_status'))
     def check_report_status_action(self):
         check_report_status(self)
 
@@ -77,15 +77,15 @@ class JiraBehavior(MyBaseTaskSet):
 
     @task(config.percentage('config_changed'))
     def check_config_change_action(self):
-        check_config_change(self)
+        check_config_change(self)"""
 
     """@task(config.percentage('get_pdf'))
     def get_pdf_action(self):
         get_pdf(self)"""
 
-    @task(config.percentage('post_config'))
+    """@task(config.percentage('post_config'))
     def post_config_action(self):
-        post_config(self)
+        post_config(self)"""
 
     
 

@@ -55,14 +55,14 @@ def test_1_selenium_view_project_summary(jira_webdriver, jira_datasets, jira_scr
     modules.view_project_summary(jira_webdriver, jira_datasets)
 
 
-def test_1_selenium_view_cloud_report(jira_webdriver, jira_datasets, jira_screen_shots):
+"""def test_1_selenium_view_cloud_report(jira_webdriver, jira_datasets, jira_screen_shots):
      extension_ui.view_cloud_report(jira_webdriver, jira_datasets)
 
 def test_1_selenium_view_report_config(jira_webdriver, jira_datasets, jira_screen_shots):
      extension_ui.view_report_config(jira_webdriver, jira_datasets)
 
 def test_1_selenium_view_refresh_report(jira_webdriver, jira_datasets, jira_screen_shots):
-     extension_ui.view_refresh_report(jira_webdriver, jira_datasets)
+     extension_ui.view_refresh_report(jira_webdriver, jira_datasets)"""
 
 # this action should be the last one
 def test_2_selenium_z_log_out(jira_webdriver, jira_datasets, jira_screen_shots):

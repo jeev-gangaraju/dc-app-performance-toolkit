@@ -12,7 +12,7 @@ def run_report(locust):
     statusCode = r.status_code
     assert (content == "{\"status\":\"RUNNING\"}") or (status_code == 500)"""
 
-@jira_measure("locust_app_specific_check_report_status")
+"""@jira_measure("locust_app_specific_check_report_status")
 @run_as_specific_user(username='admin', password='admin') 
 def check_report_status(locust):
     r = locust.get(f"{JIRA_SETTINGS.server_url}/rest/healthcheckjirareporter/latest/run/status", catch_response=True) 
@@ -41,7 +41,7 @@ def check_config_change(locust):
     statusCode = r.status_code 
     assert statusCode == 200
 
-"""@jira_measure("locust_app_specific_get_pdf")
+@jira_measure("locust_app_specific_get_pdf")
 @run_as_specific_user(username='admin', password='admin') 
 def get_pdf(locust):
     r = locust.get(f"{JIRA_SETTINGS.server_url}/rest/healthcheckjirareporter/latest/pdf", catch_response=True) 

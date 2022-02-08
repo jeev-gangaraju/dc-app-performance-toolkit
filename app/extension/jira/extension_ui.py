@@ -8,7 +8,7 @@ from selenium_ui.jira.pages.pages import Login
 from util.conf import JIRA_SETTINGS
 
 
-def view_cloud_report(webdriver, datasets):
+"""def view_cloud_report(webdriver, datasets):
     page = BasePage(webdriver)
 
     @print_timing("selenium_app_specific_report_view")
@@ -70,5 +70,5 @@ def view_refresh_report(webdriver, datasets):
         page.wait_until_visible((By.ID, "mainReport"))
         webdriver.find_element_by_id("refreshReport").click()
         page.wait_until_visible((By.ID, "generate")) 
-    measure()
+    measure()"""
 
