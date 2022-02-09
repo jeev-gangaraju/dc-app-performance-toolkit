@@ -47,4 +47,3 @@ def get_pdf(locust):
     r = locust.get(f"{JIRA_SETTINGS.server_url}/rest/healthcheckjirareporter/latest/pdf", catch_response=True) 
     statusCode = r.status_code 
     assert statusCode == 200"""
-

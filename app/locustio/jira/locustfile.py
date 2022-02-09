@@ -88,9 +88,6 @@ class JiraBehavior(MyBaseTaskSet):
         post_config(self)
 
     
-
-
-
 class JiraUser(HttpUser):
     host = JIRA_SETTINGS.server_url
     tasks = [JiraBehavior]
